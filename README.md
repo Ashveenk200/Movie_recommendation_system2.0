@@ -113,6 +113,8 @@ Popular Movies with Same Genre → Filter & Return
 
 ---
 
+
+
 ### 3. **Hybrid Recommendation Strategy**
 
 The system combines both methods to provide comprehensive recommendations:
@@ -167,31 +169,6 @@ TF-IDF        Genre-Based
 ```bash
 GET /movie/search?query=Inception&tfidf_top_n=12&genre_limit=12
 ```
-
-**Response:**
-```json
-{
-  "query": "Inception",
-  "movie_details": {
-    "tmdb_id": 27205,
-    "title": "Inception",
-    "release_date": "2010-07-15",
-    "overview": "A skilled thief who steals corporate secrets...",
-    "poster_url": "https://image.tmdb.org/t/p/w500/...",
-    "genres": [{"id": 28, "name": "Action"}, {"id": 878, "name": "Science Fiction"}]
-  },
-  "tfidf_recommendations": [
-    {
-      "title": "Interstellar",
-      "score": 0.87,
-      "tmdb": {"tmdb_id": 157336, "title": "Interstellar", ...}
-    }
-  ],
-  "genre_recommendations": [...]
-}
-```
-
----
 
 ## 🚀 Installation & Setup
 
@@ -255,26 +232,6 @@ The application will be available at:
 - **Backend API:** `http://localhost:8000`
 - **API Docs:** `http://localhost:8000/docs`
 
----
-
-## 📁 Project Structure
-
-```
-web-movie-recommendation/
-├── main.py                 # FastAPI backend server
-├── app.py                  # Streamlit frontend
-├── requirements.txt        # Python dependencies
-├── .env                    # Environment variables (TMDB API key)
-├── models/                 # Pre-trained ML models
-│   ├── df.pkl             # Movie dataset
-│   ├── tfidf_matrix.pkl   # TF-IDF sparse matrix
-│   ├── tfidf.pkl          # TF-IDF vectorizer
-│   └── indices.pkl        # Title-to-index mapping
-├── myenv/                 # Virtual environment
-└── README.md              # This file
-```
-
----
 
 ## 🎯 How to Use
 
